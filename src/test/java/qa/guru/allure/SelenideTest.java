@@ -33,10 +33,5 @@ public class SelenideTest {
         $("#issues-tab").click();
 
         $(withText("#75")).should(Condition.exist);
-
-
-
-
-
     }
 }
