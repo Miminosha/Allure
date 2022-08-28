@@ -16,7 +16,7 @@ public class StepsSelenideTest {
     private static final int ISSUE = 75;
 
     @Test
-    public void IssueSearchLambdaStepTest(){
+    public void issueSearchLambdaStepTest(){
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Открываем главную страницу GitHub", () -> {
@@ -42,7 +42,7 @@ public class StepsSelenideTest {
     }
 
     @Test
-    public void IssueSearchStepTest() {
+    public void issueSearchStepTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         WebStepsTest steps = new WebStepsTest();

@@ -20,7 +20,7 @@ public class SelenideTest {
     @Story("Поиск Issue")
     @Owner("AnnaMemikova")
     @DisplayName("Поиск конкретного Issue в репозитории")
-    public void IssueSearchTest(){
+    public void issueSearchTest(){
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("https://github.com/");
