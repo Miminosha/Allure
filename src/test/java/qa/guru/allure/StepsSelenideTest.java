@@ -6,6 +6,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -18,10 +19,14 @@ public class StepsSelenideTest {
     private static final String REPO = "selenide/selenide-appium";
     private static final int ISSUE = 75;
 
-    @Test
-    public void issueSearchLambdaStepTest(){
+    @BeforeAll
+    static void configure(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+    }
+
+    @Test
+    public void issueSearchLambdaStepTest(){
 
         step("Открываем главную страницу GitHub", () -> {
             open("https://github.com/");
@@ -47,8 +52,6 @@ public class StepsSelenideTest {
 
     @Test
     public void issueSearchStepTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         WebStepsTest steps = new WebStepsTest();
         steps.openMainPage();
