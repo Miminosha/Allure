@@ -26,7 +26,7 @@ public class Attach {
         return message;
     }
 
-    public static void browserConsoleLigs(){
+    public static void browserConsoleLogs(){
         attachAsText(
                 "Browser console logs",
                 String.join("\n", Selenide.getWebDriverLogs(BROWSER))

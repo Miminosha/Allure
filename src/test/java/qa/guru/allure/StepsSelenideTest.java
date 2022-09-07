@@ -15,15 +15,10 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class StepsSelenideTest {
+public class StepsSelenideTest extends TestBase {
     private static final String REPO = "selenide/selenide-appium";
     private static final int ISSUE = 75;
 
-    @BeforeAll
-    static void configure(){
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-    }
 
     @Test
     public void issueSearchLambdaStepTest(){
@@ -59,14 +54,6 @@ public class StepsSelenideTest {
         steps.goToRepo(REPO);
         steps.goToIssue();
         steps.chekingIssue(ISSUE);
-    }
-
-    @AfterEach
-    void addAttachments(){
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLigs();
-
     }
 }
 
