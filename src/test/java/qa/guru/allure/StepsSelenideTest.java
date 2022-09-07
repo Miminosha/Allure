@@ -1,6 +1,7 @@
 package qa.guru.allure;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -20,6 +21,7 @@ public class StepsSelenideTest {
     @Test
     public void issueSearchLambdaStepTest(){
         SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         step("Открываем главную страницу GitHub", () -> {
             open("https://github.com/");
@@ -46,6 +48,7 @@ public class StepsSelenideTest {
     @Test
     public void issueSearchStepTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         WebStepsTest steps = new WebStepsTest();
         steps.openMainPage();
