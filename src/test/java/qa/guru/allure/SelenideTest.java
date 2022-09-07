@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.By.linkText;
 
-public class SelenideTest {
+public class SelenideTest extends TestBase {
 
     @Test
     @Feature("Поиск")
