@@ -2,7 +2,9 @@ package qa.guru.allure;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -51,6 +53,14 @@ public class StepsSelenideTest {
         steps.goToRepo(REPO);
         steps.goToIssue();
         steps.chekingIssue(ISSUE);
+    }
+
+    @AfterEach
+    void addAttachments(){
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLigs();
+
     }
 }
 
