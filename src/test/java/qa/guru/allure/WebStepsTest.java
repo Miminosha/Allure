@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 
-public class WebStepsTest {
+public class WebStepsTest extends TestBase {
 
     @Step("Открываем главную страницу GitHub")
     public void openMainPage() {
